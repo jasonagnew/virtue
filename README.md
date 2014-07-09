@@ -72,6 +72,12 @@ SSH onto the server, then execute:
 
     $ virtue app:delete my-app
 
+## Adding Sendmail
+
+If your app requires sendmail you install it by running:
+
+    $ virtue add:sendmail my-app
+
 ## License
 
 MIT
