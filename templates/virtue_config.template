@@ -1,0 +1,16 @@
+PUBLIC=/var/www
+GIT=/var/repo
+
+DOMAIN=codeshack.co
+
+
+SERVER_TIMEZONE="UTC"
+PHP_VERISON="latest"
+
+
+MYSQL_USER="root"
+MYSQL_PASS="root"
+MYSQL_REMOTE="true"
+MYSQL_VERISON="5.5"
+
+UBUNTU="trusty"
