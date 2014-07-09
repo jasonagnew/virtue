@@ -2,11 +2,11 @@
 
 Virute is super simple server setup. With one command you can create an app with git remote deployment, subdomain & MySQL database
 
-**Note**: Some of the LAMP set up is based the awesome https://github.com/fideloper/Vaprobash
+**Note**: Some of the LAMP set up is based the awesome [Vaprobash](https://github.com/fideloper/Vaprobash)  
 
 ## Requirements
 
-Ubuntu 13.10. Ideally have a domain ready to point to your host. It's designed for and is probably best to use a fresh VM. The installer will install everything it needs.
+Ubuntu Trusty or Precise. Ideally have a domain ready to point to your host. It's designed for and is probably best to use a fresh VM. The installer will install everything it needs.
 
 Please ensure you have set up your ssh keys, like so:
 
@@ -24,16 +24,29 @@ Add:
 
 ## Installing
 
-### Development
+    $ curl -L https://raw.githubusercontent.com/jasonagnew/virtue/master/tools/install.sh | bash -s [domain] [mysql-user] [mysql-password] [mysql-remote] [php-verson] [ubuntu-verison]
 
-    $ curl -L https://raw.githubusercontent.com/jasonagnew/virtue/master/tools/install.sh | bash -s [domain] [mysql-user] [mysql-password] [mysql-remote]
+Please complete the variables in the brackets, examples below. The install may take around 5 minutes.
 
-Please complete the variables in the brackets, example below. This install may take around 5 minutes.
+### Options
 
-### Example
+    [mysql-remote]     true|false
+    [php-verson]       latest|previous|distributed  (5.5|5.4|5.3) *Note: Trusty doesn't support 5.3
+    [ubuntu-verison]   trusty|precise
 
-    $ curl -L https://raw.githubusercontent.com/jasonagnew/virtue/master/tools/install.sh | bash -s bigbitecreative.com root pass1234 true
+### Example - Trusty with PHP 5.5
 
+    $ curl -L https://raw.githubusercontent.com/jasonagnew/virtue/master/tools/install.sh | bash -s bigbitecreative.com root pass1234 true latest trusty
+
+### Example - Precise with PHP 5.3
+
+    $ curl -L https://raw.githubusercontent.com/jasonagnew/virtue/master/tools/install.sh | bash -s bigbitecreative.com root pass1234 true distributed precise
+
+## Deploy a Site
+
+A site in Virtue is the main app used on the server, it will set up the naked domain plus the `www` subdomain. It will also set up self-signed SSL certs (which can be replaced afterwards). To create a site, SSH onto the server and execute:
+
+    $ virtue site:create my-site
 
 ## Deploy an App
 
