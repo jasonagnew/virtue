@@ -22,6 +22,12 @@ source ~/.virtue_config
 
 case "$1" in
 
+  add:sendmail)
+
+    sudo apt-get install -y sendmail && echo "Sendmail installed"
+
+  ;;
+
   site:create)
 
     # Setup Git Remote & Deployment
