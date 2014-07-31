@@ -24,7 +24,7 @@ case "$1" in
 
   add:sendmail)
 
-    sudo apt-get install -y sendmail && echo "Sendmail installed"
+    sudo apt-get install -y sendmail && sudo apt-get -V install postfix && echo "Sendmail installed"
 
   ;;
 
