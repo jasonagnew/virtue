@@ -26,7 +26,7 @@ sudo apt-get update
 
 # Install Apache
 # -qq implies -y --force-yes
-sudo apt-get install -qq apache2 apache2-mpm-event
+sudo apt-get install -qq apache2
 
 echo ">>> Configuring Apache"
 
